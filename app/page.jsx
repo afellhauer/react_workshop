@@ -27,9 +27,12 @@ export default function Home() {
         alt="Insanely built teddy hauling an inordinately large domino (not the pizza)"
         style={{ width: 100 }} />
       <h1>Cuteness 👋</h1>
-      
-      <Form handleCalculate={calculateScore}/>
-      <Result score={score}/>
+      {score == 0 && (
+        <Form handleCalculate={calculateScore}/>
+      )}
+      {score != 0 && (
+        <Result score={score}/>
+      )}
     </main>
   )
 }
